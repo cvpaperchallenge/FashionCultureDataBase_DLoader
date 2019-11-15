@@ -10,9 +10,9 @@ from xml.etree.ElementTree import Element, SubElement, Comment, tostring
 import xml.etree.ElementTree as ET
 
 parser = argparse.ArgumentParser(description = 'collect FCDB for human detection test')
-parser.add_argument('--yfcc', default='./yfcc100m_dataset', type=str, help='path for yfcc100m metadata')
-parser.add_argument('--id_dict', default='./image_id_list.json', type=str, help='path for image id list')
-parser.add_argument('--save_dir', default='./VOC_format', type=str, help='path for save dir')
+parser.add_argument('--yfcc', default='../YFCC100Mpart0', type=str, help='path for yfcc100m metadata')
+parser.add_argument('--id_dict', default='../image_id_list.json', type=str, help='path for image id list')
+parser.add_argument('--save_dir', default='../VOC_format', type=str, help='path for save dir')
 args = parser.parse_args()
 
 # make save dirs
@@ -30,7 +30,7 @@ f2 = open(args.id_dict, 'r')
 ids = json.load(f2)
 
 err = 0
-
+all = len(ids.items())
 # Start Main loop
 print('Start!!')
 for i, (k, v) in enumerate(ids.items()):
@@ -95,17 +95,11 @@ for i, (k, v) in enumerate(ids.items()):
     tree = ET.ElementTree(element=annotation_el)
     tree.write(save_anno_path, xml_declaration = False)
 
-    if i + 1 > 10:
-        print(i)
-        break
+    if (i + 1) % 10000:
+        print('Progress:', i, '/', all)
 
-print('Saved :', i+1)
+print('Saved :', i + 1)
 print('Error :', i + 1 - err)
-
-#f = open(os.path.join(args.save_dir, 'ImageSets/Main/person_trainval.txt'), "w")
-#f.close()
-#f = open(os.path.join(args.save_dir, 'ImageSets/Main/trainval.txt'), "w")
-#f.close()
 
 anno_files = os.listdir(os.path.join(args.save_dir, 'Annotations'))
 for anno_file in anno_files:

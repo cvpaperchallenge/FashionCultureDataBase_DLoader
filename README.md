@@ -77,8 +77,6 @@ python coco_fomat.py --yfcc='./yfcc100m_dataset' \
 国立開発研究法人産業技術総合研究所
 
 
-
-
 [1]:https://arxiv.org/abs/1703.07920
 [2]:https://arxiv.org/abs/1703.07920
 [3]:http://projects.dfki.uni-kl.de/yfcc100m/
