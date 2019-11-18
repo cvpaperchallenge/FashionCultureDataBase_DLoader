@@ -52,7 +52,7 @@ FCDBv2構築に必要な、画像IDとバウンディングボックスが対に
 #### 16 citys Directory
 Classificationなどのタスクに有効な16都市ごとのディレクトリ構成で、FCDBv2を構築します。  
 ```
-python dir_16citys.py --yfcc='./yfcc100m_dataset' \
+python ImageFolder.py --yfcc='./yfcc100m_dataset' \
                         --id_dict='./image_id_list.json' \
                         --save_dir='./FCDBv2'
 ```
@@ -60,7 +60,7 @@ python dir_16citys.py --yfcc='./yfcc100m_dataset' \
 #### Pascal VOC (for Person Detection)
 人物検出器の事前学習などに有効なPascal VOC形式で、FCDBv2を構築します。  
 ```
-python voc_fomat.py --yfcc='./yfcc100m_dataset' \
+python VocFomat.py --yfcc='./yfcc100m_dataset' \
                         --id_dict='./image_id_list.json' \
                         --save_dir='./FCDBv2'
 ```
@@ -68,7 +68,7 @@ python voc_fomat.py --yfcc='./yfcc100m_dataset' \
 #### MS COCO (for Person Detection)
 人物検出器の事前学習などに有効なMS COCO形式で、FCDBv2を構築します。  
 ```
-python coco_fomat.py --yfcc='./yfcc100m_dataset' \
+python CocoFomat.py --yfcc='./yfcc100m_dataset' \
                         --id_dict='./image_id_list.json' \
                         --save_dir='./FCDBv2'
 ```

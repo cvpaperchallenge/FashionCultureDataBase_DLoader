@@ -1,6 +1,4 @@
 import os
-import sys
-import ast
 import argparse
 import json
 import urllib.error
@@ -9,7 +7,7 @@ from PIL import Image
 from xml.etree.ElementTree import Element, SubElement, Comment, tostring
 import xml.etree.ElementTree as ET
 
-parser = argparse.ArgumentParser(description = 'collect FCDB for human detection test')
+parser = argparse.ArgumentParser(description = 'collect FCDBv2 from YFCC100M')
 parser.add_argument('--yfcc', default='../YFCC100Mpart0', type=str, help='path for yfcc100m metadata')
 parser.add_argument('--id_dict', default='../image_id_list.json', type=str, help='path for image id list')
 parser.add_argument('--save_dir', default='../VOC_format', type=str, help='path for save dir')
@@ -103,16 +101,16 @@ print('Error :', i + 1 - err)
 
 anno_files = os.listdir(os.path.join(args.save_dir, 'Annotations'))
 for anno_file in anno_files:
-	name, ext = os.path.splitext(anno_file)
-	text_p = name + "  1"
-	text_t = name
+    name, ext = os.path.splitext(anno_file)
+    text_p = name + "  1"
+    text_t = name
 
-	t = open(os.path.join(args.save_dir, 'ImageSets/Main/person_trainval.txt'), "a")
-	t.write(text_p + "\n")
-	t.close()
+    t = open(os.path.join(args.save_dir, 'ImageSets/Main/person_trainval.txt'), "a")
+    t.write(text_p + "\n")
+    t.close()
 
-	t = open(os.path.join(args.save_dir, 'ImageSets/Main/trainval.txt'), "a")
-	t.write(text_t + "\n")
-	t.close()
+    t = open(os.path.join(args.save_dir, 'ImageSets/Main/trainval.txt'), "a")
+    t.write(text_t + "\n")
+    t.close()
 
 print('Finish!!')
