@@ -96,8 +96,8 @@ for i, (k, v) in enumerate(ids.items()):
     if (i + 1) % 10000:
         print('Progress:', i, '/', all)
 
-print('Saved :', i + 1)
-print('Error :', i + 1 - err)
+print('Saved :', i + 1 - err)
+print('Error :', err)
 
 anno_files = os.listdir(os.path.join(args.save_dir, 'Annotations'))
 for anno_file in anno_files:
