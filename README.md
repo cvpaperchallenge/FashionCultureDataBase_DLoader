@@ -1,18 +1,17 @@
-# FashionCultureDataBase v2 Downloader
+# Fashion Culture DataBase v2
 ## Updates
 * 2019/11/08 レポジトリの作成
 
 ## Summary
 FCDBおよびFCDBv2v2は以下の文献に従い，構成されております．  
 [Kaori Abe, Teppei Suzuki, Shunya Ueta, Akio Nakamura, Yutaka Satoh, Hirokatsu Kataoka  
-"Changing Fashion Cultures,"  
-, 2017.][1]
+"Changing Fashion Cultures," MIRU, 2017.][1]
 
 [Hirokatsu Kataoka, Kaori Abe, Munetaka Minoguchi, Akio Nakamura and Yutaka Satoh  
 "Ten-million-order Human Database for World-wide Fashion Culture Analysis,"  
 Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition Workshop (CVPRW), 2019.][2]  
 
-本レポジトリはFCDBv2を公開するためのコードやバウンディングボックスの情報を含みます。FCDBv2はYFCC100Mを基に構成しているため、画像やメタ情報などのデータを公開することはできません。しかし、著者らで生成したバウンディングボックスのデータや、FCDBv2の構築に必要なコードは公開することができるので、YFCC100Mと合わせて使用することで構築することが可能です。
+本レポジトリはFCDBv2を公開するためのコードやバウンディングボックスの情報を含みます。FCDBv2はYFCC100Mを基に構成しているため、画像やメタ情報などのデータを公開することはできません。従って、著者らで生成したバウンディングボックスのデータや、FCDBv2の構築に必要なコードのみを公開し、YFCC100Mと合わせて使用して頂くことでFCDBv2を再現することが可能です。
 本レポジトリで共有するものは以下の通りです。  
 * FCDBv2構築に必要な画像およびバウンディングボックスの一覧
 * 3種の形式でのFCDBv2の構築  
