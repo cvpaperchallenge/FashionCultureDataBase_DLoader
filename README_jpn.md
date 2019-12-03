@@ -65,7 +65,7 @@ python VocFomat.py --yfcc='./yfcc100m_dataset' \
 ```
 
 #### MS COCO (for Person Detection)
-物体検出で使用されるMSCOCO形式でFCDBv2を構築します。画像IDとbboxを対応付ける処理です。  
+物体検出で使用されるMS COCO形式でFCDBを構築します。画像IDとbboxを対応付ける処理です。  
 ```
 python CocoFomat.py --yfcc='./yfcc100m_dataset' \
                         --id_dict='./image_id_list.json' \

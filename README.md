@@ -36,20 +36,17 @@ If you use the dataset or codes, please cite the following:
 * 400 GB vacant space in your computer
 
 ## Preparation
-FCDBはYFCC100Mを基に構築した画像データベースであるため、あらかじめYFCC100Mをダウンロードする必要があります。また、FCDB使用に関するライセンスやその他の権利はYFCC100Mに帰属します。  
-YFCC100Mのダウンロード方法については[YFCC100M][3]をご確認ください。  
-必要なデータはAmazon s3から取得することができる`yfcc100m_dataset`です。
+A user must download in advance, due to FCDB has constructed based on YFCC100M. The rights including copyright and license are belonged to YFCC100M. Please refer to the description of YFCC100M [YFCC100M][3].
+The required data can be available on `yfcc100m_dataset` on Amazon s3.
 
-## データセットの入手について
-FCDB構築に必要な画像IDとbboxが対になったデータはこちらの[フォーム (TBD)][4]にご記入・ご投稿頂いた後、確認の上で入手可能なリンクをご案内致します。
-
+## Dataset download
+Please fill in the [form (TBD)][4] to obtain a file which contains image ID and bboxes. After our confirmation, we will send an email to get the file.
 
 ## Running the code
-構築するデータ形式ごとに実行するコードが異なります。  
-※データのパス、保存先の引数を適切に設定してください。
+We provide three types of dataset representation. Please see the following instruction what you want. Please properly set a directory path in your environment.
 
-#### 16 citys Directory
-ディレクトリを都市ごとに分割してFCDBを構築します。FCDBは16都市に分割されます。  
+#### 16 cities
+FCDB is divided into 16 directories. The directory is corresponding at each city.
 ```
 python ImageFolder.py --yfcc='./yfcc100m_dataset' \
                         --id_dict='./image_id_list.json' \
@@ -57,7 +54,7 @@ python ImageFolder.py --yfcc='./yfcc100m_dataset' \
 ```
 
 #### Pascal VOC (for Person Detection)
-物体検出で使用されるPascal VOC形式でFCDBを構築します。画像IDとbboxを対応付ける処理です。
+FCDB is transformed by Pascal VOC form which is used in object detection. The image ID and bbox are paired.
 ```
 python VocFomat.py --yfcc='./yfcc100m_dataset' \
                         --id_dict='./image_id_list.json' \
@@ -65,7 +62,7 @@ python VocFomat.py --yfcc='./yfcc100m_dataset' \
 ```
 
 #### MS COCO (for Person Detection)
-物体検出で使用されるMSCOCO形式でFCDBv2を構築します。画像IDとbboxを対応付ける処理です。  
+FCDB is transformed by MS COCO form which is used in object detection. The image ID and bbox are paired.  
 ```
 python CocoFomat.py --yfcc='./yfcc100m_dataset' \
                         --id_dict='./image_id_list.json' \
