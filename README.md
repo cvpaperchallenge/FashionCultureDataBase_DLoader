@@ -3,7 +3,8 @@
 * Nov. 8, 2019: Repository creation
 
 ## Summary
-Based on the following papers, FCDB has been constructed.
+FCDB has been constructed based on the following papers.
+
 [Kaori Abe, Teppei Suzuki, Shunya Ueta, Akio Nakamura, Yutaka Satoh, Hirokatsu Kataoka  
 "Changing Fashion Cultures," arXiv pre-print:1703.07920, 2017.][1]
 
@@ -11,16 +12,15 @@ Based on the following papers, FCDB has been constructed.
 "Ten-million-order Human Database for World-wide Fashion Culture Analysis,"  
 Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition Workshop (CVPRW), 2019.][2]  
 
-本レポジトリはFCDBを構成するためのコードやbounding box（bbox; 検出枠）の情報を含みます。FCDBのオリジナル画像はYFCC100Mをベースとして構成しているため、画像やFlickrに含まれるメタ情報などのデータを公開することはできません。従って、著者らで生成したbboxのデータや、FCDBの構築に必要なコードのみを公開し、YFCC100Mと合わせて使用して頂くことでFCDBを再現することが可能です。
-本レポジトリで共有するものは以下の通りです。
-* FCDB構築に必要な画像IDおよびbboxの一覧
-* 3種の形式でのFCDBの構築  
-  * 画像のみ収集 (16都市ごとにディレクトリを形成)
-  * Pascal VOC形式 (人物検出用)
-  * MS COCO形式 (人物検出用)
+The repository provides codes and bounding boxes (bboxes) in order to construct FCDB which is based on YFCC100M dataset. Please note that we are NOT serving original images and meta information including YFCC100M dataset. Therefore, please download YFCC100M images yourself by following the Yahoo's instruction. We are sharing only person bboxes which are corresponding to YFCC100M images. The detailed sharing files are shown below.
+* Image identification number (Image ID) and bboxes on FCDB
+* 3 types of dataset representation
+  * Images divided into 16 directories
+  * Pascal VOC format (for person detection)
+  * MS COCO format (for person detection)
 
 ## Citation
-文献での掲載は以下の内容でお願いします。  
+If you use the dataset or codes, please cite the following:
 
 ```@inproceedings{KataokaCVPRW2019_FCDB,
   author={Hirokatsu Kataoka, Kaori Abe, Munetaka Minoguchi, Akio Nakamura and Yutaka Satoh},
@@ -33,10 +33,10 @@ Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition Wo
 ## Requirements
 * python 3
 * numpy, xml, json, argparse
-* 400 GB程度の空き容量
+* 400 GB vacant space in your computer
 
 ## Preparation
-FCDBv2はYFCC100Mを基に構築した画像データベースであるため、あらかじめYFCC100Mをダウンロードする必要があります。また、FCDBv2使用に関するライセンスやその他の権利はYFCC100Mに帰属します。  
+FCDBはYFCC100Mを基に構築した画像データベースであるため、あらかじめYFCC100Mをダウンロードする必要があります。また、FCDB使用に関するライセンスやその他の権利はYFCC100Mに帰属します。  
 YFCC100Mのダウンロード方法については[YFCC100M][3]をご確認ください。  
 必要なデータはAmazon s3から取得することができる`yfcc100m_dataset`です。
 

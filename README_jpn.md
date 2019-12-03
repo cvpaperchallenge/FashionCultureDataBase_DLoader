@@ -36,7 +36,7 @@ Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition Wo
 * 400 GB程度の空き容量
 
 ## Preparation
-FCDBv2はYFCC100Mを基に構築した画像データベースであるため、あらかじめYFCC100Mをダウンロードする必要があります。また、FCDBv2使用に関するライセンスやその他の権利はYFCC100Mに帰属します。  
+FCDBはYFCC100Mを基に構築した画像データベースであるため、あらかじめYFCC100Mをダウンロードする必要があります。また、FCDB使用に関するライセンスやその他の権利はYFCC100Mに帰属します。  
 YFCC100Mのダウンロード方法については[YFCC100M][3]をご確認ください。  
 必要なデータはAmazon s3から取得することができる`yfcc100m_dataset`です。
 
