@@ -40,7 +40,7 @@ A user must download in advance, due to FCDB has constructed based on YFCC100M. 
 The required data can be available on `yfcc100m_dataset` on Amazon s3.
 
 ## Dataset download
-Please fill in the [form (TBD)][4] to obtain a file which contains image ID and bboxes. After our confirmation, we will send an email to get the file.
+Please fill in the [form][4] to obtain a file which contains image ID and bboxes. After our confirmation, we will send an email to get the file.
 
 ## Running the code
 We provide three types of dataset representation. Please see the following instruction what you want. Please properly set a directory path in your environment.
@@ -73,4 +73,4 @@ python CocoFomat.py --yfcc='./yfcc100m_dataset' \
 [1]:https://arxiv.org/abs/1703.07920
 [2]:http://openaccess.thecvf.com/content_CVPRW_2019/html/FFSS-USAD/Kataoka_Ten-Million-Order_Human_Database_for_World-Wide_Fashion_Culture_Analysis_CVPRW_2019_paper.html
 [3]:http://projects.dfki.uni-kl.de/yfcc100m/
-[4]:http://projects.dfki.uni-kl.de/yfcc100m/
+[4]:https://forms.gle/ewTpFi6iYsnrairK6
