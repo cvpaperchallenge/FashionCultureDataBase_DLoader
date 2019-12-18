@@ -41,7 +41,7 @@ YFCC100Mのダウンロード方法については[YFCC100M][3]をご確認く�
 必要なデータはAmazon s3から取得することができる`yfcc100m_dataset`です。
 
 ## データセットの入手について
-FCDB構築に必要な画像IDとbboxが対になったデータはこちらの[フォーム (TBD)][4]にご記入・ご投稿頂いた後、確認の上で入手可能なリンクをご案内致します。
+FCDB構築に必要な画像IDとbboxが対になったデータはこちらの[フォーム][4]にご記入・ご投稿頂いた後、確認の上で入手可能なリンクをご案内致します。
 
 
 ## Running the code
@@ -76,4 +76,4 @@ python CocoFomat.py --yfcc='./yfcc100m_dataset' \
 [1]:https://arxiv.org/abs/1703.07920
 [2]:http://openaccess.thecvf.com/content_CVPRW_2019/html/FFSS-USAD/Kataoka_Ten-Million-Order_Human_Database_for_World-Wide_Fashion_Culture_Analysis_CVPRW_2019_paper.html
 [3]:http://projects.dfki.uni-kl.de/yfcc100m/
-[4]:http://projects.dfki.uni-kl.de/yfcc100m/
+[4]:https://forms.gle/ewTpFi6iYsnrairK6
