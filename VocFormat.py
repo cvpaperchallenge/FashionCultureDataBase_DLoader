@@ -7,10 +7,10 @@ from PIL import Image
 from xml.etree.ElementTree import Element, SubElement, Comment, tostring
 import xml.etree.ElementTree as ET
 
-parser = argparse.ArgumentParser(description = 'collect FCDBv2 from YFCC100M')
-parser.add_argument('--yfcc', default='../YFCC100Mpart0', type=str, help='path for yfcc100m metadata')
-parser.add_argument('--id_dict', default='../image_id_list.json', type=str, help='path for image id list')
-parser.add_argument('--save_dir', default='../VOC_format', type=str, help='path for save dir')
+parser = argparse.ArgumentParser(description = 'Collect FCDBv2 from YFCC100M')
+parser.add_argument('--yfcc', default='./yfcc100m_dataset', type=str, help='path for yfcc100m metadata')
+parser.add_argument('--id_json', default='./image_id_list.json', type=str, help='path for image id list')
+parser.add_argument('--save_dir', default='./VOC_format', type=str, help='path for save dir')
 args = parser.parse_args()
 
 # make save dirs
@@ -24,7 +24,7 @@ os.mkdir(os.path.join(args.save_dir, 'ImageSets', 'Main'))
 print('Loading Data...')
 f1 = open(args.yfcc)
 lines = f1.readlines()
-f2 = open(args.id_dict, 'r')
+f2 = open(args.id_json, 'r')
 ids = json.load(f2)
 
 err = 0
@@ -75,11 +75,11 @@ for i, (k, v) in enumerate(ids.items()):
 
     for box in v:
         object_el = SubElement(annotation_el, 'object')
-        name_el = SubElement(object_el, 'name')#name
+        name_el = SubElement(object_el, 'name')
         name_el.text = 'person'
-        diff_el = SubElement(object_el, 'difficult')#difficult
+        diff_el = SubElement(object_el, 'difficult')
         diff_el.text = '0'
-        bndbox_el = SubElement(object_el, 'bndbox')#bndbox
+        bndbox_el = SubElement(object_el, 'bndbox')
         xmin_el = SubElement(bndbox_el, 'xmin')
         xmin_el.text = str(box[0])
         ymin_el = SubElement(bndbox_el, 'ymin')
@@ -93,7 +93,7 @@ for i, (k, v) in enumerate(ids.items()):
     tree = ET.ElementTree(element=annotation_el)
     tree.write(save_anno_path, xml_declaration = False)
 
-    if (i + 1) % 10000:
+    if (i + 1) % 2500 == 0:
         print('Progress:', i, '/', all)
 
 print('Saved :', i + 1 - err)
