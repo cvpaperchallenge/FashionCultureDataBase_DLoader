@@ -91,7 +91,6 @@ for img_id, (k, v) in enumerate(ids.items()):
 
     if (img_id + 1) % 2500 == 0:
         print('Progress:', img_id + 1, '/', all)
-        break
 
 dict_ = {}
 dict_["info"] = info

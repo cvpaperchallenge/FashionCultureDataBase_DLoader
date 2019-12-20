@@ -49,7 +49,7 @@ We provide three types of dataset representation. Please see the following instr
 FCDB is divided into 16 directories. The directory is corresponding at each city.
 ```
 python ImageFolder.py --yfcc='./yfcc100m_dataset' \
-                        --id_dict='./image_id_list.json' \
+                        --id_json='./image_id_list.json' \
                         --save_dir='./FCDBv2'
 ```
 
@@ -57,7 +57,7 @@ python ImageFolder.py --yfcc='./yfcc100m_dataset' \
 FCDB is transformed by Pascal VOC form which is used in object detection. The image ID and bbox are paired.
 ```
 python VocFomat.py --yfcc='./yfcc100m_dataset' \
-                        --id_dict='./image_id_list.json' \
+                        --id_json='./image_id_list.json' \
                         --save_dir='./FCDBv2'
 ```
 
@@ -65,7 +65,7 @@ python VocFomat.py --yfcc='./yfcc100m_dataset' \
 FCDB is transformed by MS COCO form which is used in object detection. The image ID and bbox are paired.  
 ```
 python CocoFomat.py --yfcc='./yfcc100m_dataset' \
-                        --id_dict='./image_id_list.json' \
+                        --id_json='./image_id_list.json' \
                         --save_dir='./FCDBv2'
 ```
 

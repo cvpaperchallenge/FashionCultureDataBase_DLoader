@@ -52,7 +52,7 @@ FCDB構築に必要な画像IDとbboxが対になったデータはこちらの[
 ディレクトリを都市ごとに分割してFCDBを構築します。FCDBは16都市に分割されます。  
 ```
 python ImageFolder.py --yfcc='./yfcc100m_dataset' \
-                        --id_dict='./image_id_list.json' \
+                        --id_json='./image_id_list.json' \
                         --save_dir='./FCDBv2'
 ```
 
@@ -60,7 +60,7 @@ python ImageFolder.py --yfcc='./yfcc100m_dataset' \
 物体検出で使用されるPascal VOC形式でFCDBを構築します。画像IDとbboxを対応付ける処理です。
 ```
 python VocFomat.py --yfcc='./yfcc100m_dataset' \
-                        --id_dict='./image_id_list.json' \
+                        --id_json='./image_id_list.json' \
                         --save_dir='./FCDBv2'
 ```
 
@@ -68,7 +68,7 @@ python VocFomat.py --yfcc='./yfcc100m_dataset' \
 物体検出で使用されるMS COCO形式でFCDBを構築します。画像IDとbboxを対応付ける処理です。  
 ```
 python CocoFomat.py --yfcc='./yfcc100m_dataset' \
-                        --id_dict='./image_id_list.json' \
+                        --id_json='./image_id_list.json' \
                         --save_dir='./FCDBv2'
 ```
 
