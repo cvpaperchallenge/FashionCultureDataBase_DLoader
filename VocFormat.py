@@ -94,7 +94,7 @@ for i, (k, v) in enumerate(ids.items()):
     tree.write(save_anno_path, xml_declaration = False)
 
     if (i + 1) % 2500 == 0:
-        print('Progress:', i, '/', all)
+        print('Progress:', i + 1, '/', all)
 
 print('Saved :', i + 1 - err)
 print('Error :', err)

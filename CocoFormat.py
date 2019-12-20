@@ -7,10 +7,10 @@ from PIL import Image
 from xml.etree.ElementTree import Element, SubElement, Comment, tostring
 import xml.etree.ElementTree as ET
 
-parser = argparse.ArgumentParser(description = 'collect FCDBv2 from YFCC100M')
-parser.add_argument('--yfcc', default='../YFCC100Mpart0', type=str, help='path for yfcc100m metadata')
-parser.add_argument('--id_dict', default='../image_id_list.json', type=str, help='path for image id list')
-parser.add_argument('--save_dir', default='../COCO_format', type=str, help='path for save dir')
+parser = argparse.ArgumentParser(description = 'Collect FCDBv2 from YFCC100M')
+parser.add_argument('--yfcc', default='./yfcc100m_dataset', type=str, help='path for yfcc100m metadata')
+parser.add_argument('--id_json', default='./image_id_list.json', type=str, help='path for image id list')
+parser.add_argument('--save_dir', default='./VOC_format', type=str, help='path for save dir')
 args = parser.parse_args()
 
 # make save dirs
@@ -36,7 +36,7 @@ annotations = []
 print('Loading Data...')
 f1 = open(args.yfcc)
 lines = f1.readlines()
-f2 = open(args.id_dict, 'r')
+f2 = open(args.id_json, 'r')
 ids = json.load(f2)
 
 err = 0
@@ -72,22 +72,15 @@ for img_id, (k, v) in enumerate(ids.items()):
 
     # Make COCO format
     img_data = {
-        #"license": 4,
         "file_name": photo_id + '.jpg',
-        #"coco_url": "http://images.cocodataset.org/val2017/000000397133.jpg",
         "height": size[1],
         "width": size[0],
-        #"date_captured": "2013-11-14 17:02:52",
-        #"flickr_url": "http://farm7.staticflickr.com/6116/6255196340_da26cf2c9e_z.jpg",
         "id": img_id
     }
     images.append(img_data)
 
     for box in v:
         anno_data = {
-            #"segmentation": [[510.66,423.01,511.72,420.03,...,510.45,423.01]],
-            #"area": 702.1057499999998,
-            #"iscrowd": 0,
             "image_id": img_id,
             "bbox": [box[0], box[1], box[2] - box[0], box[3] - box[1]],
             "category_id": 1,
@@ -96,10 +89,8 @@ for img_id, (k, v) in enumerate(ids.items()):
         obj_id += 1
         annotations.append(anno_data)
 
-
-
-    if (img_id + 1) % 10000:
-        print('Progress:', img_id, '/', all)
+    if (img_id + 1) % 2500 == 0:
+        print('Progress:', img_id + 1, '/', all)
         break
 
 dict_ = {}
@@ -112,6 +103,6 @@ save_path = os.path.join(args.save_dir, 'FCDBv2_train.json')
 fw = open(save_path,'w')
 json.dump(dict_, fw)
 
-print('Saved :', i + 1 - err)
+print('Saved :', img_id + 1 - err)
 print('Error :', err)
 print('Finish!!')
