@@ -8,7 +8,7 @@ from PIL import Image
 parser = argparse.ArgumentParser(description = 'collect FCDBv2 from YFCC100M')
 parser.add_argument('--yfcc', default='./yfcc100m_dataset', type=str, help='path for yfcc100m metadata')
 parser.add_argument('--id_json', default='./image_id_list.json', type=str, help='path for image id list')
-parser.add_argument('--save_dir', default='./VOC_format', type=str, help='path for save dir')
+parser.add_argument('--save_dir', default='./ImageFolder', type=str, help='path for save dir')
 args = parser.parse_args()
 
 CITYS = {'London': (-0.12776, 51.50735), 'NewYork': (-74.0059, 40.71278),
