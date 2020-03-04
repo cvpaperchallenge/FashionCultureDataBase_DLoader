@@ -1,5 +1,10 @@
 # Fashion Culture DataBase (FCDB)
+## Issues
+* Mar. 4, 2020: YFCC100M, the source dataset of Fashion Culture DataBase currently may have an issue on downloading.
+Please check updates of [this page][3].
+
 ## Updates
+* Mar. 4, 2020: Repository is published
 * Nov. 8, 2019: Repository creation
 
 ## Summary
