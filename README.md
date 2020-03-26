@@ -79,3 +79,5 @@ python CocoFomat.py --yfcc='./yfcc100m_dataset' \
 [2]:http://openaccess.thecvf.com/content_CVPRW_2019/html/FFSS-USAD/Kataoka_Ten-Million-Order_Human_Database_for_World-Wide_Fashion_Culture_Analysis_CVPRW_2019_paper.html
 [3]:http://projects.dfki.uni-kl.de/yfcc100m/
 [4]:https://forms.gle/ewTpFi6iYsnrairK6
+[5]:https://github.com/qijiezhao/M2Det
+[6]:https://github.com/amdegroot/ssd.pytorch
