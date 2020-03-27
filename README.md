@@ -49,7 +49,7 @@ The required data can be available on `yfcc100m_dataset` on Amazon s3.
 * Image ID and bboxes  
   Please fill in the form to obtain a file which contains image ID and bboxes. After our confirmation, we will send an email to get the file.
 
-* Pre-train weight  
+* Pre-train weights  
   It shares the trained weights of [M2Det][5] and [SSD][6] which are trained FCDB. The configuration of each detector follows the default settings of each original repository.  
   Download link is [here][7].
 
