@@ -46,12 +46,13 @@ A user must download in advance, due to FCDB has constructed based on YFCC100M. 
 The required data can be available on `yfcc100m_dataset` on Amazon s3.
 
 ## Download
-* Pre-train weight  
-  It shares the trained weights of [M2Det][5] and [SSD][6] which are trained FCDB. The configuration of each detector follows the default settings of each original repository.
-  [Download link][7]
-
 * Image ID and bboxes  
   Please fill in the form to obtain a file which contains image ID and bboxes. After our confirmation, we will send an email to get the file.
+
+* Pre-train weight  
+  It shares the trained weights of [M2Det][5] and [SSD][6] which are trained FCDB. The configuration of each detector follows the default settings of each original repository.  
+  Download link is [here][7].
+
 
 ## Running the code
 We provide three types of dataset representation. Please see the following instruction what you want. Please properly set a directory path in your environment.
