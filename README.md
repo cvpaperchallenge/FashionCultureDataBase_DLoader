@@ -4,7 +4,7 @@
 Please check updates of [this page][3].
 
 ## Updates
-* Mar. 26, 2020: Pre-train weights is published
+* Mar. 26, 2020: Pre-train weights are published
 * Mar. 4, 2020: Repository is published
 * Nov. 8, 2019: Repository creation
 
@@ -46,11 +46,12 @@ A user must download in advance, due to FCDB has constructed based on YFCC100M. 
 The required data can be available on `yfcc100m_dataset` on Amazon s3.
 
 ## Download
-Please fill in the form to obtain pre-train weight and a file which contains image ID and bboxes. After our confirmation, we will send an email to get the file.
 * Pre-train weight  
   It shares the trained weights of [M2Det][5] and [SSD][6] which are trained FCDB. The configuration of each detector follows the default settings of each original repository.
+  [Download link][7]
+
 * Image ID and bboxes  
-  This is a json file containing the ID and bbox of the image with the person in it.
+  Please fill in the form to obtain a file which contains image ID and bboxes. After our confirmation, we will send an email to get the file.
 
 ## Running the code
 We provide three types of dataset representation. Please see the following instruction what you want. Please properly set a directory path in your environment.
@@ -86,3 +87,4 @@ python CocoFomat.py --yfcc='./yfcc100m_dataset' \
 [4]:https://forms.gle/ewTpFi6iYsnrairK6
 [5]:https://github.com/qijiezhao/M2Det
 [6]:https://github.com/amdegroot/ssd.pytorch
+[7]:https://drive.google.com/drive/folders/1iSTxdASUS8Kz2I-v7Q9xIY7MDMovF6uR?usp=sharing
