@@ -24,6 +24,12 @@ The repository provides codes and bounding boxes (bboxes) in order to construct 
   * Images divided into 16 directories
   * Pascal VOC format (for person detection)
   * MS COCO format (for person detection)
+  
+Our FCDB is also applied as a large-scale pre-training dataset for person detection. Please see also the document.  
+
+[Munetaka Minoguchi, Ken Okayama, Yutaka Satoh, Hirokatsu Kataoka  
+“Weakly Supervised Dataset Collection for Robust Person Detection”  
+arXiv pre-print:2003.12263, 2020.][8]
 
 ## Citation
 If you use the dataset or codes, please cite the following:
@@ -97,3 +103,4 @@ python CocoFomat.py --yfcc='./yfcc100m_dataset' \
 [5]:https://github.com/qijiezhao/M2Det
 [6]:https://github.com/amdegroot/ssd.pytorch
 [7]:https://drive.google.com/drive/folders/1iSTxdASUS8Kz2I-v7Q9xIY7MDMovF6uR?usp=sharing
+[8]:https://arxiv.org/abs/2003.12263
