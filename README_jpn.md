@@ -21,6 +21,12 @@ Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition Wo
   * Pascal VOC形式 (人物検出用)
   * MS COCO形式 (人物検出用)
 
+また、FCDBを大規模事前学習用データセットとした人物検出タスクへの応用についても検証しております。論文はarXiv.orgで公開中です。  
+
+[Munetaka Minoguchi, Ken Okayama, Yutaka Satoh, Hirokatsu Kataoka  
+“Weakly Supervised Dataset Collection for Robust Person Detection”  
+arXiv pre-print:2003.12263, 2020.][8]
+
 ## Citation
 文献での掲載は以下の内容でお願いします。  
 
@@ -94,3 +100,4 @@ python CocoFomat.py --yfcc='./yfcc100m_dataset' \
 [5]:https://github.com/qijiezhao/M2Det
 [6]:https://github.com/amdegroot/ssd.pytorch
 [7]:https://drive.google.com/drive/folders/1iSTxdASUS8Kz2I-v7Q9xIY7MDMovF6uR?usp=sharing
+[8]:https://arxiv.org/abs/2003.12263
