@@ -28,11 +28,19 @@ The repository provides codes and bounding boxes (bboxes) in order to construct 
 ## Citation
 If you use the dataset or codes, please cite the following:
 
-```@inproceedings{KataokaCVPRW2019_FCDB,
+```
+@inproceedings{KataokaCVPRW2019_FCDB,
   author={Hirokatsu Kataoka, Kaori Abe, Munetaka Minoguchi, Akio Nakamura and Yutaka Satoh},
   title={Ten-million-order Human Database for World-wide Fashion Culture Analysis},
   booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition Workshop (CVPRW)},
   year={2019},
+}
+
+@inproceedings{Minoguchi_WSPD,
+  author={Munetaka Minoguchi, Ken Okayama, Yutaka Satoh, Hirokatsu Kataoka},
+  title={Weakly Supervised Dataset Collection for Robust Person Detection},
+  booktitle={arXiv pre-print:2003.12263},
+  year={2020},
 }
 ```
 
@@ -47,7 +55,7 @@ The required data can be available on `yfcc100m_dataset` on Amazon s3.
 
 ## Download
 * Image ID and bboxes  
-  Please fill in the form to obtain a file which contains image ID and bboxes. After our confirmation, we will send an email to get the file.
+  Please fill out the [form][4] to obtain a file which contains image ID and bboxes. After our confirmation, we will send an email to get the file.
 
 * Pre-train weights  
   It shares the trained weights of [M2Det][5] and [SSD][6] which are trained FCDB. The configuration of each detector follows the default settings of each original repository.  
