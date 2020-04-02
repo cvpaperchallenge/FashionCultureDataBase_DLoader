@@ -1,6 +1,8 @@
 # Fashion Culture DataBase (FCDB)
 ## Updates
-* 2019/11/08 レポジトリの作成
+* 2020/03/26: 事前学習モデルの重みを公開
+* 2020/03/04: レポジトリの公開
+* 2019/11/08: レポジトリの作成
 
 ## Summary
 FCDBは以下の文献に従い，構成されております．  
@@ -22,11 +24,19 @@ Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition Wo
 ## Citation
 文献での掲載は以下の内容でお願いします。  
 
-```@inproceedings{KataokaCVPRW2019_FCDB,
+```
+@inproceedings{KataokaCVPRW2019_FCDB,
   author={Hirokatsu Kataoka, Kaori Abe, Munetaka Minoguchi, Akio Nakamura and Yutaka Satoh},
   title={Ten-million-order Human Database for World-wide Fashion Culture Analysis},
   booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition Workshop (CVPRW)},
   year={2019},
+}
+
+@inproceedings{Minoguchi_WSPD,
+  author={Munetaka Minoguchi, Ken Okayama, Yutaka Satoh, Hirokatsu Kataoka},
+  title={Weakly Supervised Dataset Collection for Robust Person Detection},
+  booktitle={arXiv pre-print:2003.12263},
+  year={2020},
 }
 ```
 
@@ -40,9 +50,13 @@ FCDBはYFCC100Mを基に構築した画像データベースであるため、�
 YFCC100Mのダウンロード方法については[YFCC100M][3]をご確認ください。  
 必要なデータはAmazon s3から取得することができる`yfcc100m_dataset`です。
 
-## データセットの入手について
-FCDB構築に必要な画像IDとbboxが対になったデータはこちらの[フォーム][4]にご記入・ご投稿頂いた後、確認の上で入手可能なリンクをご案内致します。
+## Download
+* ImageIDとbbox
+  FCDB構築に必要な画像IDとbboxが対になったデータはこちらの[フォーム][4]にご記入・ご投稿頂いた後、確認の上で入手可能なリンクをご案内致します。
 
+* 事前学習モデルの重み
+  [M2Det][5]と[SSD][6]によってFCDBを学習した重みを提供します。ハイパーパラメータなどのconfigurationは、各実装のレポジトリのデフォルトに従います。  
+  ダウンロードリンクは[こちら][7]です。
 
 ## Running the code
 構築するデータ形式ごとに実行するコードが異なります。  
@@ -77,3 +91,6 @@ python CocoFomat.py --yfcc='./yfcc100m_dataset' \
 [2]:http://openaccess.thecvf.com/content_CVPRW_2019/html/FFSS-USAD/Kataoka_Ten-Million-Order_Human_Database_for_World-Wide_Fashion_Culture_Analysis_CVPRW_2019_paper.html
 [3]:http://projects.dfki.uni-kl.de/yfcc100m/
 [4]:https://forms.gle/ewTpFi6iYsnrairK6
+[5]:https://github.com/qijiezhao/M2Det
+[6]:https://github.com/amdegroot/ssd.pytorch
+[7]:https://drive.google.com/drive/folders/1iSTxdASUS8Kz2I-v7Q9xIY7MDMovF6uR?usp=sharing
