@@ -32,14 +32,14 @@ arXiv pre-print:2003.12263, 2020.][8]
 
 ```
 @inproceedings{KataokaCVPRW2019_FCDB,
-  author={Hirokatsu Kataoka, Kaori Abe, Munetaka Minoguchi, Akio Nakamura and Yutaka Satoh},
+  author={Hirokatsu Kataoka and Kaori Abe and Munetaka Minoguchi and Akio Nakamura and Yutaka Satoh},
   title={Ten-million-order Human Database for World-wide Fashion Culture Analysis},
   booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition Workshop (CVPRW)},
   year={2019},
 }
 
 @inproceedings{Minoguchi_WSPD,
-  author={Munetaka Minoguchi, Ken Okayama, Yutaka Satoh, Hirokatsu Kataoka},
+  author={Munetaka Minoguchi and Ken Okayama and Yutaka Satoh and Hirokatsu Kataoka},
   title={Weakly Supervised Dataset Collection for Robust Person Detection},
   booktitle={arXiv pre-print:2003.12263},
   year={2020},
@@ -79,7 +79,7 @@ python ImageFolder.py --yfcc='./yfcc100m_dataset' \
 #### Pascal VOC (for Person Detection)
 物体検出で使用されるPascal VOC形式でFCDBを構築します。画像IDとbboxを対応付ける処理です。
 ```
-python VocFomat.py --yfcc='./yfcc100m_dataset' \
+python VocFormat.py --yfcc='./yfcc100m_dataset' \
                         --id_json='./image_id_list.json' \
                         --save_dir='./FCDBv2'
 ```
@@ -87,7 +87,7 @@ python VocFomat.py --yfcc='./yfcc100m_dataset' \
 #### MS COCO (for Person Detection)
 物体検出で使用されるMS COCO形式でFCDBを構築します。画像IDとbboxを対応付ける処理です。  
 ```
-python CocoFomat.py --yfcc='./yfcc100m_dataset' \
+python CocoFormat.py --yfcc='./yfcc100m_dataset' \
                         --id_json='./image_id_list.json' \
                         --save_dir='./FCDBv2'
 ```
