@@ -18,14 +18,14 @@ FCDB has been constructed based on the following papers.
 "Ten-million-order Human Database for World-wide Fashion Culture Analysis,"  
 Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition Workshop (CVPRW), 2019.][2]  
 
-The repository provides codes and bounding boxes (bboxes) in order to construct FCDB which is based on YFCC100M dataset. Please note that we are NOT serving original images and meta information including YFCC100M dataset. Therefore, please download YFCC100M images yourself by following the Yahoo's instruction. We are sharing only person bboxes which are corresponding to YFCC100M images. The detailed sharing files are shown below.
+The repository provides codes and bounding boxes (bboxes) in order to construct FCDB which is based on YFCC100M dataset. Please note that we are NOT serving original images and meta information included in YFCC100M dataset. Therefore, please download YFCC100M images yourself by following the Yahoo's instruction. We are sharing only person bboxes which are corresponding to YFCC100M images. The detailed sharing files are shown below.
 * Image identification number (Image ID) and bboxes on FCDB
 * 3 types of dataset representation
   * Images divided into 16 directories
   * Pascal VOC format (for person detection)
   * MS COCO format (for person detection)
   
-Our FCDB is also applied as a large-scale pre-training dataset for person detection. Please see also the document.  
+Our FCDB is also applied as a large-scale pre-training dataset for person detection. Please see also the following paper.
 
 [Munetaka Minoguchi, Ken Okayama, Yutaka Satoh, Hirokatsu Kataoka  
 “Weakly Supervised Dataset Collection for Robust Person Detection”  
@@ -36,14 +36,14 @@ If you use the dataset or codes, please cite the following:
 
 ```
 @inproceedings{KataokaCVPRW2019_FCDB,
-  author={Hirokatsu Kataoka, Kaori Abe, Munetaka Minoguchi, Akio Nakamura and Yutaka Satoh},
+  author={Hirokatsu Kataoka and Kaori Abe and Munetaka Minoguchi and Akio Nakamura and Yutaka Satoh},
   title={Ten-million-order Human Database for World-wide Fashion Culture Analysis},
   booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition Workshop (CVPRW)},
   year={2019},
 }
 
 @inproceedings{Minoguchi_WSPD,
-  author={Munetaka Minoguchi, Ken Okayama, Yutaka Satoh, Hirokatsu Kataoka},
+  author={Munetaka Minoguchi and Ken Okayama and Yutaka Satoh and Hirokatsu Kataoka},
   title={Weakly Supervised Dataset Collection for Robust Person Detection},
   booktitle={arXiv pre-print:2003.12263},
   year={2020},
@@ -56,7 +56,7 @@ If you use the dataset or codes, please cite the following:
 * 400 GB vacant space in your computer
 
 ## Preparation
-A user must download in advance, due to FCDB has constructed based on YFCC100M. The rights including copyright and license are belonged to YFCC100M. Please refer to the description of YFCC100M [YFCC100M][3].
+A user must download YFCC100M in advance, due to FCDB has constructed based on YFCC100M. The rights including copyright and license are belonged to YFCC100M. Please refer to the description of YFCC100M [YFCC100M][3].
 The required data can be available on `yfcc100m_dataset` on Amazon s3.
 
 ## Download
@@ -64,7 +64,7 @@ The required data can be available on `yfcc100m_dataset` on Amazon s3.
   Please fill out the [form][4] to obtain a file which contains image ID and bboxes. After our confirmation, we will send an email to get the file.
 
 * Pre-train weights  
-  It shares the trained weights of [M2Det][5] and [SSD][6] which are trained FCDB. The configuration of each detector follows the default settings of each original repository.  
+  We provide the weights of [M2Det][5] and [SSD][6] which are trained on FCDB. The configuration of each detector follows the default settings of each original repository.
   Download link is [here][7].
 
 
@@ -72,7 +72,7 @@ The required data can be available on `yfcc100m_dataset` on Amazon s3.
 We provide three types of dataset representation. Please see the following instruction what you want. Please properly set a directory path in your environment.
 
 #### 16 cities
-FCDB is divided into 16 directories. The directory is corresponding at each city.
+FCDB is divided into 16 directories. Each directory corresponds to each city.
 ```
 python ImageFolder.py --yfcc='./yfcc100m_dataset' \
                         --id_json='./image_id_list.json' \
@@ -80,17 +80,17 @@ python ImageFolder.py --yfcc='./yfcc100m_dataset' \
 ```
 
 #### Pascal VOC (for Person Detection)
-FCDB is transformed by Pascal VOC form which is used in object detection. The image ID and bbox are paired.
+FCDB is transformed to Pascal VOC format which is used in object detection. The image ID and bbox are paired.
 ```
-python VocFomat.py --yfcc='./yfcc100m_dataset' \
+python VocFormat.py --yfcc='./yfcc100m_dataset' \
                         --id_json='./image_id_list.json' \
                         --save_dir='./FCDBv2'
 ```
 
 #### MS COCO (for Person Detection)
-FCDB is transformed by MS COCO form which is used in object detection. The image ID and bbox are paired.  
+FCDB is transformed to MS COCO format which is used in object detection. The image ID and bbox are paired.  
 ```
-python CocoFomat.py --yfcc='./yfcc100m_dataset' \
+python CocoFormat.py --yfcc='./yfcc100m_dataset' \
                         --id_json='./image_id_list.json' \
                         --save_dir='./FCDBv2'
 ```
